@@ -1,0 +1,17 @@
+model là cái ở giữa, nó tương tác giữa controller và view
+1. @Controller
+  - khi user gửi request yêu cầu trả về trang laptrinhjavaweb.com/blog
+  - request gửi về server 
+  - nó sẽ dò coi class nào có @Controller
+  - trong mấy cái class có @Controller đó, tìm tới @RequestMapping có value = "/blog"
+  - trả về
+
+2. làm sao nó biết controller ở đâu?
+  - trong dispatherServlet có context:component-scan mình có dẫn tới package controller
+  - thêm dòng <mvc:annotation-driven /> nữa
+  * khi khai báo 2 file context, để sử dụng được 2 file này thì phải load vào
+	- phải có listener => không có là vô nghĩa => bởi vì nếu user gửi request vào URL nào đó thì hệ thống phải listen được để biết user muốn vào URL nào
+
+3. Interceptertrong SpringMVC load menu tự động
+  3.1. bind data từ controller -> view
+  3.2. sử dụng JSTL loop menu ngoài view
