@@ -17,6 +17,8 @@
         <property name="prefix" value="/views/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+    
+    <mvc:resources mapping="/templates/**" location="/templates/" />
 
     <mvc:interceptors>
         <bean class="vn.edu.nlu.interceptor.MenuHandleInterceptor" />
