@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!-- Header -->
 <header>
     <!-- Header desktop -->
@@ -6,7 +7,7 @@
         <div class="top-bar">
             <div class="content-topbar flex-sb-m h-full container">
                 <div class="left-top-bar">
-                    Free shipping for standard order over $100
+                    Free ship toàn quốc với đơn hàng > 500k
                 </div>
 
                 <div class="right-top-bar flex-w h-full">
@@ -16,14 +17,6 @@
 
                     <a href="#" class="flex-c-m trans-04 p-lr-25">
                         My Account
-                    </a>
-
-                    <a href="#" class="flex-c-m trans-04 p-lr-25">
-                        EN
-                    </a>
-
-                    <a href="#" class="flex-c-m trans-04 p-lr-25">
-                        USD
                     </a>
                 </div>
             </div>
@@ -41,15 +34,15 @@
                 <div class="menu-desktop">
                     <ul class="main-menu">
                         <li class="active-menu">
-                            <a href="index.html">Trang chủ</a>
+                            <a href="<c:url value="/trang-chu" />">Trang chủ</a>
                         </li>
 
                         <li>
-                            <a href="product.html">Shop</a>
+                            <a href="product.html">Cửa hàng</a>
                         </li>
 
                         <li class="label1" data-label1="hot">
-                            <a href="shoping-cart.html">Features</a>
+                            <a href="shoping-cart.html">Bán chạy</a>
                         </li>
 
                         <li>
@@ -57,11 +50,11 @@
                         </li>
 
                         <li>
-                            <a href="about.html">About</a>
+                            <a href="about.html">Về chúng tôi</a>
                         </li>
 
                         <li>
-                            <a href="contact.html">Contact</a>
+                            <a href="contact.html">Liên hệ</a>
                         </li>
                     </ul>
                 </div>
@@ -88,7 +81,7 @@
     <div class="wrap-header-mobile">
         <!-- Logo moblie -->
         <div class="logo-mobile">
-            <a href="index.html"><img src="<c:url value="/templates/web/images/icons/logo-01.png"/>" alt="IMG-LOGO"></a>
+            <a href="<c:url value="/trang-chu" />"><img src="<c:url value="/templates/web/images/icons/logo-01.png"/>" alt="IMG-LOGO"></a>
         </div>
 
         <!-- Icon header -->

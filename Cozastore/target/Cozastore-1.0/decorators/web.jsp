@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ include file="/common/taglib.jsp" %>
+
 <!DOCTYPE html>
 <html>
 <head>
     <title><decorator:title default="Trang chủ"/></title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
@@ -39,12 +41,18 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" href="<c:url value="/templates/web/css/util.css"/>">
     <link rel="stylesheet" href="<c:url value="/templates/web/css/main.css"/>">
+    <style>
+        html, body, * {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
+            sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        }
+    </style>
 </head>
 <body class="animsition">
-    <%@ include file="/common/web/header.jsp"%>
-    <%@ include file="/common/web/cart.jsp"%>
+    <%@ include file="/common/web/header.jsp" %>
+    <%@ include file="/common/web/cart.jsp" %>
     <decorator:body/>
-    <%@ include file="/common/web/footer.jsp"%>
+    <%@ include file="/common/web/footer.jsp" %>
 
     <!--===============================================================================================-->
     <script src="<c:url value="/templates/common/jquery/jquery-3.2.1.min.js"/>"></script>
@@ -56,7 +64,7 @@
     <!--===============================================================================================-->
     <script src="<c:url value="/templates/web/vendor/select2/select2.min.js"/>"></script>
     <script>
-        $(".js-select2").each(function(){
+        $(".js-select2").each(function () {
             $(this).select2({
                 minimumResultsForSearch: 20,
                 dropdownParent: $(this).next('.dropDownSelect2')
@@ -77,12 +85,12 @@
     <!--===============================================================================================-->
     <script src="<c:url value="/templates/web/vendor/MagnificPopup/jquery.magnific-popup.min.js"/>"></script>
     <script>
-        $('.gallery-lb').each(function() { // the containers for all your galleries
+        $('.gallery-lb').each(function () { // the containers for all your galleries
             $(this).magnificPopup({
                 delegate: 'a', // the selector for gallery item
                 type: 'image',
                 gallery: {
-                    enabled:true
+                    enabled: true
                 },
                 mainClass: 'mfp-fade'
             });
@@ -93,13 +101,13 @@
     <!--===============================================================================================-->
     <script src="<c:url value="/templates/web/vendor/sweetalert/sweetalert.min.js" />"></script>
     <script>
-        $('.js-addwish-b2').on('click', function(e){
+        $('.js-addwish-b2').on('click', function (e) {
             e.preventDefault();
         });
 
-        $('.js-addwish-b2').each(function(){
+        $('.js-addwish-b2').each(function () {
             var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
-            $(this).on('click', function(){
+            $(this).on('click', function () {
                 swal(nameProduct, "is added to wishlist !", "success");
 
                 $(this).addClass('js-addedwish-b2');
@@ -107,10 +115,10 @@
             });
         });
 
-        $('.js-addwish-detail').each(function(){
+        $('.js-addwish-detail').each(function () {
             var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
 
-            $(this).on('click', function(){
+            $(this).on('click', function () {
                 swal(nameProduct, "is added to wishlist !", "success");
 
                 $(this).addClass('js-addedwish-detail');
@@ -120,9 +128,9 @@
 
         /*---------------------------------------------*/
 
-        $('.js-addcart-detail').each(function(){
+        $('.js-addcart-detail').each(function () {
             var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
-            $(this).on('click', function(){
+            $(this).on('click', function () {
                 swal(nameProduct, "is added to cart !", "success");
             });
         });
@@ -131,16 +139,16 @@
     <!--===============================================================================================-->
     <script src="<c:url value="/templates/web/vendor/perfect-scrollbar/perfect-scrollbar.min.js" />"></script>
     <script>
-        $('.js-pscroll').each(function(){
-            $(this).css('position','relative');
-            $(this).css('overflow','hidden');
+        $('.js-pscroll').each(function () {
+            $(this).css('position', 'relative');
+            $(this).css('overflow', 'hidden');
             var ps = new PerfectScrollbar(this, {
                 wheelSpeed: 1,
                 scrollingThreshold: 1000,
                 wheelPropagation: false,
             });
 
-            $(window).on('resize', function(){
+            $(window).on('resize', function () {
                 ps.update();
             })
         });

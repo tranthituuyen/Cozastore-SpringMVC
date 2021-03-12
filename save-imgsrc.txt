@@ -1,0 +1,17 @@
+var list = document.querySelectorAll(".main_content_preview");
+for (i = 0; i < list.length; ++i) {
+  var img = list[i].dataset.imgsrc; console.log(i+1 + " " + img)
+}
+
+
+INSERT INTO product (code, name, category_code, price, cover, sex, created_date, created_by)
+VALUES (
+	'',
+	'',
+	'',
+	0,
+	'',
+	'',
+	NOW(),
+	'tú uyên'
+)
