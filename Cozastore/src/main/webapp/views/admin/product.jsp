@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,150 +34,25 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>img img</td>
-                            <td>ASSStutter áo sơ mi nam gì đó quên tên ời</td>
-                            <td>sơ mi</td>
-                            <td>125000</td>
-                            <td>245</td>
-                            <td>1200</td>
-                            <td>
-                                <i class="far fa-edit mr-1" aria-hidden="true"></i>
-                                <i class="far fa-trash-alt ml-1" aria-hidden="true"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>img img</td>
-                            <td>DSStutter áo sơ mi nam gì đó quên tên ời</td>
-                            <td>sơ mi</td>
-                            <td>125000</td>
-                            <td>245</td>
-                            <td>1200</td>
-                            <td>
-                                <i class="far fa-edit mr-1" aria-hidden="true"></i>
-                                <i class="far fa-trash-alt ml-1" aria-hidden="true"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>img img</td>
-                            <td>CSStutter áo sơ mi nam số 12</td>
-                            <td>sơ mi</td>
-                            <td>125000</td>
-                            <td>245</td>
-                            <td>1200</td>
-                            <td>
-                                <i class="far fa-edit mr-1" aria-hidden="true"></i>
-                                <i class="far fa-trash-alt ml-1" aria-hidden="true"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>img img</td>
-                            <td>BSStutter áo sơ mi nam số 4</td>
-                            <td>sơ mi</td>
-                            <td>125000</td>
-                            <td>245</td>
-                            <td>1200</td>
-                            <td>
-                                <i class="far fa-edit mr-1" aria-hidden="true"></i>
-                                <i class="far fa-trash-alt ml-1" aria-hidden="true"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>img img</td>
-                            <td>ASStutter áo sơ mi nam số 1</td>
-                            <td>sơ mi</td>
-                            <td>125000</td>
-                            <td>245</td>
-                            <td>1200</td>
-                            <td>
-                                <i class="far fa-edit mr-1" aria-hidden="true"></i>
-                                <i class="far fa-trash-alt ml-1" aria-hidden="true"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>img img</td>
-                            <td>SSStutter áo sơ mi nam gì đó quên tên ời</td>
-                            <td>sơ mi</td>
-                            <td>125000</td>
-                            <td>245</td>
-                            <td>1200</td>
-                            <td>
-                                <i class="far fa-edit mr-1" aria-hidden="true"></i>
-                                <i class="far fa-trash-alt ml-1" aria-hidden="true"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>img img</td>
-                            <td>ASSStutter áo sơ mi nam gì đó quên tên ời</td>
-                            <td>sơ mi</td>
-                            <td>125000</td>
-                            <td>245</td>
-                            <td>1200</td>
-                            <td>
-                                <i class="far fa-edit mr-1" aria-hidden="true"></i>
-                                <i class="far fa-trash-alt ml-1" aria-hidden="true"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>img img</td>
-                            <td>DSStutter áo sơ mi nam gì đó quên tên ời</td>
-                            <td>sơ mi</td>
-                            <td>125000</td>
-                            <td>245</td>
-                            <td>1200</td>
-                            <td>
-                                <i class="far fa-edit mr-1" aria-hidden="true"></i>
-                                <i class="far fa-trash-alt ml-1" aria-hidden="true"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>img img</td>
-                            <td>CSStutter áo sơ mi nam số 12</td>
-                            <td>sơ mi</td>
-                            <td>125000</td>
-                            <td>245</td>
-                            <td>1200</td>
-                            <td>
-                                <i class="far fa-edit mr-1" aria-hidden="true"></i>
-                                <i class="far fa-trash-alt ml-1" aria-hidden="true"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>img img</td>
-                            <td>BSStutter áo sơ mi nam số 4</td>
-                            <td>sơ mi</td>
-                            <td>125000</td>
-                            <td>245</td>
-                            <td>1200</td>
-                            <td>
-                                <i class="far fa-edit mr-1" aria-hidden="true"></i>
-                                <i class="far fa-trash-alt ml-1" aria-hidden="true"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>img img</td>
-                            <td>ASStutter áo sơ mi nam số 1</td>
-                            <td>sơ mi</td>
-                            <td>125000</td>
-                            <td>245</td>
-                            <td>1200</td>
-                            <td>
-                                <i class="far fa-edit mr-1" aria-hidden="true"></i>
-                                <i class="far fa-trash-alt ml-1" aria-hidden="true"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>img img</td>
-                            <td>SSStutter áo sơ mi nam gì đó quên tên ời</td>
-                            <td>sơ mi</td>
-                            <td>125000</td>
-                            <td>245</td>
-                            <td>1200</td>
-                            <td>
-                                <i class="far fa-edit mr-1" aria-hidden="true"></i>
-                                <i class="far fa-trash-alt ml-1" aria-hidden="true"></i>
-                            </td>
-                        </tr>
+                        <c:forEach var="item" items="${model.listResult}">
+                            <tr>
+                                <td class="align-middle">
+                                    <div class="bg-img"
+                                         style="background-image: url('<c:url
+                                                 value="/images/products/${item.categoryCode}/${item.cover}.jpg"/>');">
+                                    </div>
+                                </td>
+                                <td class="align-middle">${item.name}</td>
+                                <td class="align-middle">${item.categoryCode}</td>
+                                <td class="align-middle">${item.price}</td>
+                                <td class="align-middle">245</td>
+                                <td class="align-middle">1200</td>
+                                <td class="align-middle">
+                                    <i class="far fa-edit mr-1" aria-hidden="true"></i>
+                                    <i class="far fa-trash-alt ml-1" aria-hidden="true"></i>
+                                </td>
+                            </tr>
+                        </c:forEach>
                     </tbody>
                 </table>
             </div>

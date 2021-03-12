@@ -4,16 +4,18 @@ import java.io.Serializable;
 
 public class Product extends AbstractModel<Product> implements Serializable {
     private String code;
-    private String categoryCode;
     private String name;
+    private String categoryCode;
     private int price;
     private String cover;
+    private String sex;
     private String description;
+    private String details;
     private boolean status;
-    private String categoryName;
 
     // empty constructor
-    public Product() {}
+    public Product() {
+    }
 
     public String getCode() {
         return code;
@@ -21,14 +23,6 @@ public class Product extends AbstractModel<Product> implements Serializable {
 
     public void setCode(String code) {
         this.code = code;
-    }
-
-    public String getCategoryCode() {
-        return categoryCode;
-    }
-
-    public void setCategoryCode(String categoryCode) {
-        this.categoryCode = categoryCode;
     }
 
     public String getName() {
@@ -39,20 +33,20 @@ public class Product extends AbstractModel<Product> implements Serializable {
         this.name = name;
     }
 
+    public String getCategoryCode() {
+        return categoryCode;
+    }
+
+    public void setCategoryCode(String categoryCode) {
+        this.categoryCode = categoryCode;
+    }
+
     public int getPrice() {
         return price;
     }
 
     public void setPrice(int price) {
         this.price = price;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public String getCover() {
@@ -63,19 +57,35 @@ public class Product extends AbstractModel<Product> implements Serializable {
         this.cover = cover;
     }
 
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getDetails() {
+        return details;
+    }
+
+    public void setDetails(String details) {
+        this.details = details;
+    }
+
     public boolean isStatus() {
         return status;
     }
 
     public void setStatus(boolean status) {
         this.status = status;
-    }
-
-    public String getCategoryName() {
-        return categoryName;
-    }
-
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
     }
 }

@@ -10,7 +10,7 @@ import java.util.ResourceBundle;
 
 public class AbstractDAO<T> implements GenericDAO<T> {
 
-    ResourceBundle bundle = ResourceBundle.getBundle("database");
+//    ResourceBundle bundle = ResourceBundle.getBundle("database");
 
     public Connection getConnection() {
         try {
@@ -20,7 +20,7 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 //            String password = bundle.getString("password");
 
             String driverName = "com.mysql.jdbc.Driver";
-            String url = "jdbc:mysql://localhost:3306/ministore?useUnicode=true&characterEncoding=utf-8";
+            String url = "jdbc:mysql://localhost:3306/ministore";
             String user = "root";
             String password = "";
 
