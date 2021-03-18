@@ -1,0 +1,39 @@
+1. đối với thằng created/modifie by:
+	getCurrentAuditor() return ra cái tên đó.
+
+ĐỂ XÀI ĐƯỢC JPAAuditing
+	1. khai báo @EntityListener(AuditingEntityListener.class)
+	2. mỗi field khai báo đúng annotation
+	3. tạo một file config (in this case: JPAAuditingConfig)
+
+CƠ CHẾ CỦA SECURITY KHÁ GIỐNG SITEMESH DECORATOR    * nghĩa là sao?
+    - filter theo url
+    - với url nào được phép apply giao diện nào
+    - security y chang vậy
+
+ĐỂ XÀI ĐƯỢC SPRING SECURITY
+	1.
+	2.
+	3.
+
+
+login_processing-url: chỗ này là chỗ submit action (trong trường hợp này nó là j_spring_security_check)
+là chỗ chứa action mà spring security viết sẵn (trường hợp này mình đặt tên là j_spring-security_check)
+copy cái này bỏ vô action của form login => khi nhấn submit username pass sẽ được gửi vô đây
+
+
+sau khi authen thành công
+    => put all thông tin vào trong spring security
+    => redirect đến chỗ xử lý author
+
+
+determineTargetUrl: ddingj tuyeen url nafo nos sex tra ve
+
+<
+entity laf ddaji dieenj cho table trong database chuws khoong phari doi tuongwj ddeer transfer dwx liejeu
+    => cái bảng mapping với table dưới database gọi là entity
+>
+
+<
+dto là nơi transfer data giữa api và client || controller và view
+>

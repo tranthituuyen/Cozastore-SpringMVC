@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import vn.edu.nlu.constant.PathConstant;
 import vn.edu.nlu.constant.URLConstant;
-import vn.edu.nlu.constant.VariableConstant;
+import vn.edu.nlu.constant.SystemConstant;
 import vn.edu.nlu.model.Product;
 import vn.edu.nlu.service.IProductService;
 
@@ -19,10 +19,10 @@ public class ProductController {
     private IProductService productService;
 
     @RequestMapping(value = URLConstant.ADMIN_PRODUCT_LIST, method = RequestMethod.GET)
-    public ModelAndView showList(@ModelAttribute(VariableConstant.MODEL) Product product) {
+    public ModelAndView showList(@ModelAttribute(SystemConstant.MODEL) Product product) {
         ModelAndView mav = new ModelAndView(PathConstant.ADMIN_PRODUCT_PAGE);
         product.setListResult(productService.findAll());
-        mav.addObject(VariableConstant.MODEL, product);
+        mav.addObject(SystemConstant.MODEL, product);
         return mav;
     }
 

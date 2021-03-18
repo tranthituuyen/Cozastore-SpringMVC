@@ -10,13 +10,14 @@ import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import vn.edu.nlu.constant.SystemConstant;
 
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.util.Properties;
 
 @Configuration
-@EnableJpaRepositories(basePackages = {"vn.edu.nlu.repository"})
+@EnableJpaRepositories(basePackages = {SystemConstant.REPOSITORY_PACKAGE})
 @EnableTransactionManagement
 public class JPAConfig {
 
@@ -55,8 +56,9 @@ public class JPAConfig {
 
     Properties additionalProperties() {
         Properties properties = new Properties();
-        properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");
-        //properties.setProperty("hibernate.hbm2ddl.auto", "none");
+//        properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");
+        properties.setProperty("hibernate.hbm2ddl.auto", "create");
+//        properties.setProperty("hibernate.hbm2ddl.auto", "none");
         return properties;
     }
 }

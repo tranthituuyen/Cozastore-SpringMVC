@@ -7,4 +7,5 @@ public class PathConstant {
 
     // user
     public static final String USER_HOME_PAGE = "/web/home";
+    public static final String LOGIN_PAGE = "/web/login";
 }

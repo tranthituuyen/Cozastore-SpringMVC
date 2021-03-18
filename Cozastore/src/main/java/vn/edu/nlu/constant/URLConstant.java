@@ -7,4 +7,5 @@ public class URLConstant {
 
     // user
     public static final String USER_HOME = "/trang-chu";
+    public static final String LOGIN = "/dang-nhap";
 }

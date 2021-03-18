@@ -15,4 +15,10 @@ public class HomeController {
         ModelAndView mav = new ModelAndView(PathConstant.USER_HOME_PAGE);
         return mav;
     }
+
+    @RequestMapping(value = URLConstant.LOGIN, method = RequestMethod.GET)
+    public ModelAndView getLoginPage() {
+        ModelAndView mav = new ModelAndView(PathConstant.LOGIN_PAGE);
+        return mav;
+    }
 }

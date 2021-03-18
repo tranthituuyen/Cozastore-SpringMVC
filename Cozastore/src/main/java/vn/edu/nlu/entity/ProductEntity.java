@@ -1,14 +1,12 @@
 package vn.edu.nlu.entity;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "product")
-public class ProductEntity {
-
-    @Id     // not null & primary key
-    @GeneratedValue(strategy = GenerationType.IDENTITY)     // set auto increment
-    private Long id;
+public class ProductEntity extends BaseEntity {
 
     @Column(name = "code")
     private String code;
@@ -39,10 +37,6 @@ public class ProductEntity {
 
     public ProductEntity() {
 
-    }
-
-    public Long getId() {
-        return id;
     }
 
     public String getCode() {
@@ -116,4 +110,5 @@ public class ProductEntity {
     public void setStatus(boolean status) {
         this.status = status;
     }
+
 }
