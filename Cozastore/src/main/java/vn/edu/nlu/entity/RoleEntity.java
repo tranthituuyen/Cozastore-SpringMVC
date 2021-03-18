@@ -4,12 +4,13 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table(name = "role")
-public class RoleEntity extends BaseEntity {
+public class RoleEntity extends BaseEntity implements Serializable {
 
     @Column(name = "code")
     private String code;
@@ -19,6 +20,10 @@ public class RoleEntity extends BaseEntity {
 
     @ManyToMany(mappedBy = "roles")
     private List<UserEntity> users = new ArrayList<>();
+
+    public RoleEntity() {
+
+    }
 
     public String getCode() {
         return code;

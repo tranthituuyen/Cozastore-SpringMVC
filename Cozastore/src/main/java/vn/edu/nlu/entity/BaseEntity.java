@@ -33,6 +33,10 @@ public abstract class BaseEntity {
     @LastModifiedBy
     private String modifiedBy;
 
+    public BaseEntity() {
+
+    }
+
     public Long getId() {
         return id;
     }

@@ -20,7 +20,7 @@ public class AbstractDAO<T> implements GenericDAO<T> {
 //            String password = bundle.getString("password");
 
             String driverName = "com.mysql.jdbc.Driver";
-            String url = "jdbc:mysql://localhost:3306/ministore";
+            String url = "jdbc:mysql://localhost:3306/cozastore";
             String user = "root";
             String password = "";
 

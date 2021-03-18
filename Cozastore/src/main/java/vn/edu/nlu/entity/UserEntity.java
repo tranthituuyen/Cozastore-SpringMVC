@@ -1,13 +1,14 @@
 package vn.edu.nlu.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 @Entity
 @Table(name = "user")
-public class UserEntity extends BaseEntity {
+public class UserEntity extends BaseEntity implements Serializable {
 
     @Column(name = "username")
     private String username;
@@ -37,12 +38,14 @@ public class UserEntity extends BaseEntity {
     private String role_code;
 
     @ManyToMany
-    @JoinTable(
-            name = "user_role",
+    @JoinTable(name = "user_role",
             joinColumns = @JoinColumn(name = "userid"),
-            inverseJoinColumns = @JoinColumn(name = "roleid")
-    )
+            inverseJoinColumns = @JoinColumn(name = "roleid"))
     private List<RoleEntity> roles = new ArrayList<>();
+
+    public UserEntity() {
+
+    }
 
     public String getUsername() {
         return username;
