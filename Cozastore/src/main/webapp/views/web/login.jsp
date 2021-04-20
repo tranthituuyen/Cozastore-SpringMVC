@@ -22,28 +22,35 @@
                                         </div>
                                     </c:if>
 
-                                    <form action="/j_spring_security_check">
+                                    <c:if test="${param.accessDenied != null}">
+                                        <div class="alert alert-danger">
+                                            You not authorize!
+                                        </div>
+                                    </c:if>
+
+                                    <form action="j_spring_security_check" id="formLogin" method="post">
                                         <div class="form-group">
-                                            <label class="small mb-1" for="inputEmailAddress">Email</label>
-                                            <input name="j_username" class="form-control py-4" id="inputEmailAddress" type="email"
-                                                   placeholder="Enter email address"/>
+                                            <label class="small mb-1" for="inputEmailAddress">Username</label>
+                                            <input name="j_username" class="form-control py-4" id="inputEmailAddress"
+                                                   type="text" placeholder="Enter username"/>
                                         </div>
                                         <div class="form-group">
                                             <label class="small mb-1" for="inputPassword">Password</label>
-                                            <input class="form-control py-4" id="inputPassword" type="password"
-                                                   placeholder="Enter password"/>
+                                            <input name="j_password" class="form-control py-4" id="inputPassword"
+                                                   type="password" placeholder="Enter password"/>
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox">
-                                                <input name="j_password" class="custom-control-input" id="rememberPasswordCheck"
+                                                <input class="custom-control-input" id="rememberPasswordCheck"
                                                        type="checkbox"/>
-                                                <label class="custom-control-label" for="rememberPasswordCheck">Remember
-                                                    password</label>
+                                                <label class="custom-control-label" for="rememberPasswordCheck">
+                                                    Remember password
+                                                </label>
                                             </div>
                                         </div>
                                         <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
                                             <a class="small" href="password.html">Forgot Password?</a>
-                                            <a class="btn btn-primary" href="index.html">Login</a>
+                                            <button id="btnLogin" type="submit" class="btn btn-primary">Login</button>
                                         </div>
                                     </form>
                                 </div>

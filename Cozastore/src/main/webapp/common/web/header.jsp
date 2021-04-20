@@ -1,3 +1,5 @@
+<%@ page import="vn.edu.nlu.constant.URLConstant" %>
+<%@ page import="vn.edu.nlu.utils.SecurityUtils" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!-- Header -->
 <header>
@@ -11,13 +13,17 @@
                 </div>
 
                 <div class="right-top-bar flex-w h-full">
-                    <a href="#" class="flex-c-m trans-04 p-lr-25">
-                        Help & FAQs
-                    </a>
+                    <security:authorize access="isAnonymous()">
+                        <a href="#" class="flex-c-m trans-04 p-lr-25">Đăng nhập</a>
+                        <a href="#" class="flex-c-m trans-04 p-lr-25">Đăng ký</a>
+                    </security:authorize>
 
-                    <a href="#" class="flex-c-m trans-04 p-lr-25">
-                        My Account
-                    </a>
+                    <security:authorize access="isAuthenticated()">
+                        <a href="#" class="flex-c-m trans-04 p-lr-25">
+                            Xin chào, <%= SecurityUtils.getPrincipal().getFullname() %>
+                        </a>
+                        <a href="<c:url value='<%= URLConstant.LOGOUT %>'/>" class="flex-c-m trans-04 p-lr-25">Thoát</a>
+                    </security:authorize>
                 </div>
             </div>
         </div>
@@ -65,11 +71,13 @@
                         <i class="zmdi zmdi-search"></i>
                     </div>
 
-                    <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="2">
+                    <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
+                         data-notify="2">
                         <i class="zmdi zmdi-shopping-cart"></i>
                     </div>
 
-                    <a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti" data-notify="0">
+                    <a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti"
+                       data-notify="0">
                         <i class="zmdi zmdi-favorite-outline"></i>
                     </a>
                 </div>
@@ -81,7 +89,8 @@
     <div class="wrap-header-mobile">
         <!-- Logo moblie -->
         <div class="logo-mobile">
-            <a href="<c:url value="/trang-chu" />"><img src="<c:url value="/templates/web/images/icons/logo-01.png"/>" alt="IMG-LOGO"></a>
+            <a href="<c:url value="/trang-chu" />"><img src="<c:url value="/templates/web/images/icons/logo-01.png"/>"
+                                                        alt="IMG-LOGO"></a>
         </div>
 
         <!-- Icon header -->
@@ -90,11 +99,13 @@
                 <i class="zmdi zmdi-search"></i>
             </div>
 
-            <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart" data-notify="2">
+            <div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart"
+                 data-notify="2">
                 <i class="zmdi zmdi-shopping-cart"></i>
             </div>
 
-            <a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti" data-notify="0">
+            <a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti"
+               data-notify="0">
                 <i class="zmdi zmdi-favorite-outline"></i>
             </a>
         </div>

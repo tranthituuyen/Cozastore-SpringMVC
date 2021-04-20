@@ -1,0 +1,53 @@
+SC works on 3 core principles or steps:
+    1. authentication
+    2. authorization
+    3. exception handling
+
+SC về cơ bản thì nó là một chuỗi servlet filter được viết ra với những mục đích khác nhau.
+Mỗi một cái trong số filters đó làm một vài task cụ thể
+
+So, có nhiều cơ chế authentication khác nhau được cung cấp bởi Spring như Http basic, form base login,..
+All mấy cái đó đều được handle với mấy cái specific filters extends AbstractAuthenticationProcessingFilter.
+
+So, all mấy cái request đều được xử lý bởi cái filter này và trong bài học này chúng ta sẽ đặt tên cho nó là AUthentication Filter
+
+Now, mấy cái cơ bản của SC là basically these filters. tụi mình cần hiểu mục đích sử dụng của nó.
+
+================================================
+=== HOW HTTPBasic Authentication works in SC ===
+================================================
+    * khi một servlet request cho HttpBasic Authentication đến SC.
+    Authentication filter sẽ pick nó và cố gắng giải mã (decode) HttpBasic Headers.
+    Sau đó nó sẽ kiểm tra có cần Authentication hay không.
+        * nếu cần, nó sẽ tạo ra 1 instance của UsernamePasswordAuthenticationToken với username và token, set isAuthenticated(false).
+        Token này sẽ được chuyển đến AuthenticationManager.
+
+        * Authenticated value ở bước này vẫn là false cho đến khi UsernamePasswordAuthenticationToken được pass vào AuthenticationManager.
+        * khi AuthenticationManager xử lý request với token object đó,
+            * nếu successful authentication thì status của authentication value sẽ được set true.
+            * else, AuthenticationException is thrown.
+
+===============================================================
+=== HOW AuthenticationManager xử lý Authentication trong SC ===
+===============================================================
+    AuthenticationManager chịu trách nhiệm xử lý authentication, using các authentication provider khác nhau
+    một vài custom authentication provider like database, LDAP,...
+
+    * trách nhiệm duy nhất của AuthenticationProvider là trả về một Authentication instance với Principal object và Granted Authorities
+
+    * khi user gửi request, nó sẽ đến authentication filter phù hợp dựa trên cơ chế authentication được dùng.
+    nó sẽ trích xuất credentials đã cho từ request và sau đó sử dụng mấy cái giá trị UsernamePasswordAuthenticationToken đã được tạo trước đó (authentication object)
+    sau đó nó gọi authenticate method của AuthenticationManager
+
+    * request sau đó được pass tới Authentication Provider và Authentication Provider chứa một implementation của UserDetailsService.
+    Spring load thông tin user trong UserDetailsService bằng cách gọi loadByUsername và so sánh username/password với credentials đã cho lúc login.
+
+    * nếu user valid, AuthenticationManager sẽ tạo UsernamePasswordAuthenticationToken instance với constructor sau:
+        public UsernamePasswordAuthenticationToken(Object principal, Object credentials, Collection<? extends GrantedAuthority> authorities) {
+            super(authorities);
+            this.principal = principal;
+            this.credentials = credentials;
+            super.setAuthenticated(true); // must use super, as we override
+        }
+
+    UserNamePasswordAuthenticationToken là Authentication object được pass vào authenticate method của AuthenticationManager

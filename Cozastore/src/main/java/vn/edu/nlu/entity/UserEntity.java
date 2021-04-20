@@ -37,7 +37,7 @@ public class UserEntity extends BaseEntity implements Serializable {
     @Column(name = "rolecode")
     private String role_code;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "user_role",
             joinColumns = @JoinColumn(name = "userid"),
             inverseJoinColumns = @JoinColumn(name = "roleid"))
@@ -109,14 +109,6 @@ public class UserEntity extends BaseEntity implements Serializable {
 
     public void setStatus(boolean status) {
         this.status = status;
-    }
-
-    public String getRole_code() {
-        return role_code;
-    }
-
-    public void setRole_code(String role_code) {
-        this.role_code = role_code;
     }
 
     public List<RoleEntity> getRoles() {

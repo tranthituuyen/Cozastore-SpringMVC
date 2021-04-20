@@ -1,10 +1,12 @@
+<%@ page import="vn.edu.nlu.constant.URLConstant" %>
+<%@ page import="vn.edu.nlu.utils.SecurityUtils" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <div id="layoutSidenav_nav">
     <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
         <div class="sb-sidenav-menu">
             <div class="nav">
                 <div class="sb-sidenav-menu-heading">Trung tâm</div>
-                <a class="nav-link" href="<c:url value="/quan-tri/trang-chu" />">
+                <a class="nav-link" href="<c:url value="<%= URLConstant.ADMIN_HOME %>" />">
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Thống kê
                 </a>
@@ -71,7 +73,7 @@
         </div>
         <div class="sb-sidenav-footer">
             <div class="small">Đăng nhập bởi:</div>
-            nguyenvuthienanh
+            <%= SecurityUtils.getPrincipal().getFullname() %>
         </div>
     </nav>
 </div>

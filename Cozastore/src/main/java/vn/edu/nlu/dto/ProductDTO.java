@@ -1,44 +1,15 @@
-package vn.edu.nlu.entity;
+package vn.edu.nlu.dto;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import java.io.Serializable;
-
-@Entity
-@Table(name = "product")
-public class ProductEntity extends BaseEntity implements Serializable {
-
-    @Column(name = "code")
+public class ProductDTO extends AbstractDTO {
     private String code;
-
-    @Column(name = "name")
     private String name;
-
-    @Column(name = "categorycode")
     private String categoryCode;
-
-    @Column(name = "price")
     private int price;
-
-    @Column(name = "sex")
-    private String sex;
-
-    @Column(name = "cover")
     private String cover;
-
-    @Column(name = "description", columnDefinition = "TEXT")
+    private String sex;
     private String description;
-
-    @Column(name = "details", columnDefinition = "TEXT")
     private String details;
-
-    @Column(name = "status")
     private boolean status;
-
-    public ProductEntity() {
-
-    }
 
     public String getCode() {
         return code;
@@ -72,20 +43,20 @@ public class ProductEntity extends BaseEntity implements Serializable {
         this.price = price;
     }
 
-    public String getSex() {
-        return sex;
-    }
-
-    public void setSex(String sex) {
-        this.sex = sex;
-    }
-
     public String getCover() {
         return cover;
     }
 
     public void setCover(String cover) {
         this.cover = cover;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 
     public String getDescription() {

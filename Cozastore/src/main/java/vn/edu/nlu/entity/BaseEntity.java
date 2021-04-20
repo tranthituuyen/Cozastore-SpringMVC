@@ -56,4 +56,5 @@ public abstract class BaseEntity {
     public String getModifiedBy() {
         return modifiedBy;
     }
+
 }

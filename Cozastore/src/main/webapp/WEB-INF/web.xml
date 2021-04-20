@@ -9,10 +9,6 @@
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
 
-    <listener>
-        <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
-    </listener>
-
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
@@ -37,20 +33,18 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
-
     <!-- declare spring security filter -->
-<!--    <filter>-->
-<!--        <filter-name>springSecurityFilterChain</filter-name>-->
-<!--        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>-->
-<!--    </filter>-->
+    <filter>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    </filter>
 
-<!--    <filter-mapping>-->
-<!--        <filter-name>springSecurityFilterChain</filter-name>-->
-<!--        <url-pattern>/*</url-pattern>-->
-<!--        <dispatcher>REQUEST</dispatcher>-->
-<!--        <dispatcher>ERROR</dispatcher>-->
-<!--    </filter-mapping>-->
-
+    <filter-mapping>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>ERROR</dispatcher>
+    </filter-mapping>
 
     <!--  sitemesh filter  -->
     <filter>

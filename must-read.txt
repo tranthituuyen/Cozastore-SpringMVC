@@ -1,3 +1,25 @@
+NHẮC LẠI SECURITY
+1. khi khởi tạo file security.xml phải gọi nó trong web.xml
+    => là cục spring security filter
+2. file security phải được load file context-param
+3. customUserDetailService là nơi authentication, nếu thành công (user, pass tồn tại)
+    => put thông tin vào security (bao gồm list authorities)
+4. CustomSuccessHandler là nơi authorization
+    => lấy thông tin từ security ra rồi dùng
+    *** để lấy được cái list authorities => viết một util để get cái list đó ra (trường hợp này là SecurityUtil)
+
+***** NOTE:    Class User là thằng security tạo sẵn
+Đối tượng lưu giữ thông tin user gọi là principal.
+
+@MANYTOMANY
+Ở chỗ này có 2 cái fetch type: eager và lazy
+    - LAZY (default): khi lấy userentiy rồi thằng role chưa load lên được. gọi ra mới load.
+    để xài được lazy thì phải khai báo ở JPAConfig
+    - EAGER: dở cái là nó tự động load ngay role cùng với user. có nhiều cái nó lồng nhau quá nhiều dữ liệu thì sẽ giảm hiệu suất => ưu tiên lazy.
+
+
+
+
 1. đối với thằng created/modifie by:
 	getCurrentAuditor() return ra cái tên đó.
 
@@ -10,12 +32,6 @@ CƠ CHẾ CỦA SECURITY KHÁ GIỐNG SITEMESH DECORATOR    * nghĩa là sao?
     - filter theo url
     - với url nào được phép apply giao diện nào
     - security y chang vậy
-
-ĐỂ XÀI ĐƯỢC SPRING SECURITY
-	1.
-	2.
-	3.
-
 
 login_processing-url: chỗ này là chỗ submit action (trong trường hợp này nó là j_spring_security_check)
 là chỗ chứa action mà spring security viết sẵn (trường hợp này mình đặt tên là j_spring-security_check)
@@ -32,8 +48,105 @@ determineTargetUrl: ddingj tuyeen url nafo nos sex tra ve
 <
 entity laf ddaji dieenj cho table trong database chuws khoong phari doi tuongwj ddeer transfer dwx liejeu
     => cái bảng mapping với table dưới database gọi là entity
+    một class đại diện cho table gọi là entity
 >
 
 <
 dto là nơi transfer data giữa api và client || controller và view
 >
+
+< CẤU HÌNH JPAConfig
+    new 1 java class JPAConfig => nó chỉ là 1 class bth thôi.
+    => khai báo @Configuration => nó sẽ thành một file config
+    => để bật tính năng tự động quản lý transaction
+        => khai báo @EnableTransactionManagement
+
+    ***
+    - để thực hiện được các câu SQL thì phải có đối tượng EntityManager để nó cung cấp các hàm excute SQL
+    - mà muốn có EntityManager thì phải có entity manager factory
+    - muốn có ManagerFactory thì phải có đoạn LocalContainerEntityManagerFactoryBean entityManagerFactory()
+
+
+    ***
+    - chỉ khai báo @Entity với @Table thôi thì chưa đủ. Thằng table không biết thằng class nào là đại diện của nó.
+    - để nó biết nhau thì phải có một cái gì đó làm cầu nối => đó là file persistence-data
+
+    ***
+    - để open được connection thì phải truyền vô cho nó mấy cái drivername, url, user, password của database
+    - dataSource() cung cấp mấy cái đó.
+
+    ***
+    - đối với JPA mình không tạo table bằng lệnh sql nữa
+    - mà mình sẽ cho nó tự động generate mấy table trong SQL dựa trên Entity mà mình đã định nghĩa
+    - để bật được tính năng đó thì mình phải add mấy cái properties đó và đây
+
+    ***
+    - để bật tính năng tự động quản lý transaction thì phải có đoạn JpaTransactionManager transaction(EntityManagerFactory)
+    - thêm một cái method exception nữa
+    - ngoài việc khai báo @Enable....transaction thì phải khai báo thêm cái này nha
+--> ====================================================================================================================
+
+Class genericDAO<T> trong JDBC mình có build các hàm chung để thực thi các câu SQL
+
+Còn khi dùng Spring JPA thì
+<   THAM KHẢO TRANG DOCS.SPRING.IO/SPRING-DATA
+    cung cấp một JpaRepository => đã build hàm chung
+
+    trong jdbc có DAO => nơi thực thi SQL lấy dữ liệu lên, nhận dữ liệu vào => lưu xuống db.
+    <=>  repository trong spring jpa
+
+    GenericDAO trong JDBC là JpaRepository của Spring data jpa
+--> ====================================================================================================================
+
+<!--
+    class dao phải khai báo @Repository
+    class service phải khai báo @Service
+    applicationContext phải khai báo <mvc: component-scan...> để nó tìm các lớp trong các package nhỏ của package lớn,
+    class nào có @Reposioty, @Service hoặc @Component của lớp tương ứng thì nó sẽ thực thi
+    còn tại sao interface không cần khai báo annotation?
+    tại vì nó đã extend JpaRepository, mà trong JpaRepository đã có sẵn rồi
+
+    *** có thấy lạ không? lấy ví dụ class product trong project của mình
+    thằng @Repository được khai báo ở class productDAO nhưng mà ProductRepository lại không có class, chỉ interface thôi
+    tại sao lại không có class? có sẵn trong JpaRepository rồi. product chỉ thừa kế lại thôi, khi nào cần custom thì viết sau
+
+    ***
+    khai báo rồi muốn dùng được phải cấu hình.
+    để sử dụng được các method của JpaRepository thì phải cấu hình
+    khai báo @EnableJpaRepository(basePackage trỏ tới package chứa các repository);
+--> ====================================================================================================================
+
+<!--
+    không phải chỉ đơn thuần là khởi tạo mấy cái như là ProductRepository extends JpaRepository là xài được đâu
+    phải cấu hình nữa
+    trong file JPAConfig khai báo @EnableJpaRepository nữa mới bật được tính năng để xài được mấy method trong JpaRepository
+--> ====================================================================================================================
+
+<!--
+    phân quyền gồm có authentication và authorization
+        - authentication: xác thực account (kiểm tra trong database có username, password mà bạn nhập không)
+        - authorization: phân quyền.
+--> ====================================================================================================================
+
+<--
+    SPRING SECURITY là một thư viện
+--> ====================================================================================================================
+
+<!--
+    @MANYTOMANY
+
+
+    CLASS BASE_ENTITY
+    - các thuộc tính của class entity thừa kế từ class base_entity này khi run nó chưa có generate ra được trong table đâu
+    - để chạy được phải khai báo @MappedSuperClass trong class BaseEntity để nó biết thằng này là cha của các entity khác
+--> ====================================================================================================================
+
+<!--
+    DAO là data access layer
+    Repository cũng là data access layer
+    nhưng mà dao là cái mà chúng ta build thuần, từ build bằng JDBC
+    nhưng mà khi chuyển qua Spring JPA, mặc định package mà nó sẽ giao tiếp với csdl, đại diện cho tâng data acces layer là repository
+    tất cả những cái repository trong này là nơi sẽ thực thi SQL <=> DAO trong JDBC
+    business service vẫn là service
+--> ====================================================================================================================
+
