@@ -1,11 +1,11 @@
 package vn.edu.nlu.dao;
 
-import vn.edu.nlu.model.Product;
+import vn.edu.nlu.model.ProductModel;
 
 import java.util.List;
 
-public interface IProductDAO extends GenericDAO<Product> {
+public interface IProductDAO extends GenericDAO<ProductModel> {
 
-    List<Product> findAll();
+    List<ProductModel> findAll();
 
 }

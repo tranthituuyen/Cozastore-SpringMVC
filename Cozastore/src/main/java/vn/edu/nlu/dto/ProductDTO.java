@@ -1,6 +1,6 @@
 package vn.edu.nlu.dto;
 
-public class ProductDTO extends AbstractDTO {
+public class ProductDTO extends AbstractDTO<ProductDTO> {
     private String code;
     private String name;
     private String categoryCode;

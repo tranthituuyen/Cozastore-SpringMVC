@@ -1,29 +1,29 @@
 package vn.edu.nlu.mapper;
 
-import vn.edu.nlu.model.Category;
+import vn.edu.nlu.model.CategoryModel;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class CategoryMapper implements RowMapper<Category> {
+public class CategoryMapper implements RowMapper<CategoryModel> {
 
     @Override
-    public Category mapRow(ResultSet resultSet) {
+    public CategoryModel mapRow(ResultSet resultSet) {
         try {
-            Category category = new Category();
-            category.setId(resultSet.getInt("id"));
-            category.setCode(resultSet.getString("madanhmuc"));
-            category.setName(resultSet.getString("tendanhmuc"));
-            category.setCreatedDate(resultSet.getTimestamp("createddate"));
-            category.setCreatedBy(resultSet.getString("createdby"));
+            CategoryModel categoryModel = new CategoryModel();
+            categoryModel.setId(resultSet.getInt("id"));
+            categoryModel.setCode(resultSet.getString("madanhmuc"));
+            categoryModel.setName(resultSet.getString("tendanhmuc"));
+            categoryModel.setCreatedDate(resultSet.getTimestamp("createddate"));
+            categoryModel.setCreatedBy(resultSet.getString("createdby"));
 
             if (resultSet.getTimestamp("modifieddate") != null) {
-                category.setModifiedDate(resultSet.getTimestamp("modifieddate"));
+                categoryModel.setModifiedDate(resultSet.getTimestamp("modifieddate"));
             }
             if (resultSet.getString("modifiedby") != null) {
-                category.setModifiedBy(resultSet.getString("modifiedby"));
+                categoryModel.setModifiedBy(resultSet.getString("modifiedby"));
             }
-            return category;
+            return categoryModel;
         } catch (SQLException e) {
             return null;
         }

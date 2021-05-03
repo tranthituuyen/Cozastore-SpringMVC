@@ -2,7 +2,7 @@ package vn.edu.nlu.model;
 
 import java.io.Serializable;
 
-public class Product extends AbstractModel<Product> implements Serializable {
+public class ProductModel extends AbstractModel<ProductModel> implements Serializable {
     private String code;
     private String name;
     private String categoryCode;
@@ -14,7 +14,7 @@ public class Product extends AbstractModel<Product> implements Serializable {
     private boolean status;
 
     // empty constructor
-    public Product() {
+    public ProductModel() {
     }
 
     public String getCode() {

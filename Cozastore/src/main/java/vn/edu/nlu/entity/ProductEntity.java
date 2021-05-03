@@ -1,8 +1,6 @@
 package vn.edu.nlu.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
@@ -14,9 +12,6 @@ public class ProductEntity extends BaseEntity implements Serializable {
 
     @Column(name = "name")
     private String name;
-
-    @Column(name = "categorycode")
-    private String categoryCode;
 
     @Column(name = "price")
     private int price;
@@ -36,6 +31,10 @@ public class ProductEntity extends BaseEntity implements Serializable {
     @Column(name = "status")
     private boolean status;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_id")
+    private CategoryEntity category;
+
     public ProductEntity() {
 
     }
@@ -54,14 +53,6 @@ public class ProductEntity extends BaseEntity implements Serializable {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getCategoryCode() {
-        return categoryCode;
-    }
-
-    public void setCategoryCode(String categoryCode) {
-        this.categoryCode = categoryCode;
     }
 
     public int getPrice() {
@@ -110,5 +101,13 @@ public class ProductEntity extends BaseEntity implements Serializable {
 
     public void setStatus(boolean status) {
         this.status = status;
+    }
+
+    public CategoryEntity getCategory() {
+        return category;
+    }
+
+    public void setCategory(CategoryEntity category) {
+        this.category = category;
     }
 }

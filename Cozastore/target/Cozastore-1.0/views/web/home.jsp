@@ -60,14 +60,14 @@
                     </div>
                 </div>
 
-                <!-- Search product -->
+                <!-- Search productModel -->
                 <div class="dis-none panel-search w-full p-t-10 p-b-15">
                     <div class="bor8 dis-flex p-l-15">
                         <button class="size-113 flex-c-m fs-16 cl2 hov-cl1 trans-04">
                             <i class="zmdi zmdi-search"></i>
                         </button>
 
-                        <input class="mtext-107 cl2 size-114 plh2 p-r-15" type="text" name="search-product" placeholder="Search">
+                        <input class="mtext-107 cl2 size-114 plh2 p-r-15" type="text" name="search-productModel" placeholder="Search">
                     </div>
                 </div>
 
@@ -266,7 +266,7 @@
                     <!-- Block2 -->
                     <div class="block2">
                         <div class="block2-pic hov-img0">
-                            <img src="<c:url value="/templates/web/images/product-01.jpg" />" alt="IMG-PRODUCT">
+                            <img src="<c:url value="/templates/web/images/productModel-01.jpg" />" alt="IMG-PRODUCT">
 
                             <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
                                 Quick View
@@ -275,7 +275,7 @@
 
                         <div class="block2-txt flex-w flex-t p-t-14">
                             <div class="block2-txt-child1 flex-col-l ">
-                                <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                <a href="productModel-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
                                     Esprit Ruffle Shirt
                                 </a>
 
@@ -298,7 +298,7 @@
                     <!-- Block2 -->
                     <div class="block2">
                         <div class="block2-pic hov-img0">
-                            <img src="<c:url value="/templates/web/images/product-02.jpg" />" alt="IMG-PRODUCT">
+                            <img src="<c:url value="/templates/web/images/productModel-02.jpg" />" alt="IMG-PRODUCT">
 
                             <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
                                 Quick View
@@ -307,7 +307,7 @@
 
                         <div class="block2-txt flex-w flex-t p-t-14">
                             <div class="block2-txt-child1 flex-col-l ">
-                                <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                <a href="productModel-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
                                     Herschel supply
                                 </a>
 
@@ -330,7 +330,7 @@
                     <!-- Block2 -->
                     <div class="block2">
                         <div class="block2-pic hov-img0">
-                            <img src="<c:url value="/templates/web/images/product-03.jpg" />" alt="IMG-PRODUCT">
+                            <img src="<c:url value="/templates/web/images/productModel-03.jpg" />" alt="IMG-PRODUCT">
 
                             <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
                                 Quick View
@@ -339,7 +339,7 @@
 
                         <div class="block2-txt flex-w flex-t p-t-14">
                             <div class="block2-txt-child1 flex-col-l ">
-                                <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                <a href="productModel-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
                                     Only Check Trouser
                                 </a>
 
@@ -362,7 +362,7 @@
                     <!-- Block2 -->
                     <div class="block2">
                         <div class="block2-pic hov-img0">
-                            <img src="<c:url value="/templates/web/images/product-04.jpg" />" alt="IMG-PRODUCT">
+                            <img src="<c:url value="/templates/web/images/productModel-04.jpg" />" alt="IMG-PRODUCT">
 
                             <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
                                 Quick View
@@ -371,7 +371,7 @@
 
                         <div class="block2-txt flex-w flex-t p-t-14">
                             <div class="block2-txt-child1 flex-col-l ">
-                                <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                <a href="productModel-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
                                     Classic Trench Coat
                                 </a>
 
@@ -394,7 +394,7 @@
                     <!-- Block2 -->
                     <div class="block2">
                         <div class="block2-pic hov-img0">
-                            <img src="<c:url value="/templates/web/images/product-05.jpg" />" alt="IMG-PRODUCT">
+                            <img src="<c:url value="/templates/web/images/productModel-05.jpg" />" alt="IMG-PRODUCT">
 
                             <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
                                 Quick View
@@ -403,7 +403,7 @@
 
                         <div class="block2-txt flex-w flex-t p-t-14">
                             <div class="block2-txt-child1 flex-col-l ">
-                                <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                <a href="productModel-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
                                     Front Pocket Jumper
                                 </a>
 
@@ -426,7 +426,7 @@
                     <!-- Block2 -->
                     <div class="block2">
                         <div class="block2-pic hov-img0">
-                            <img src="<c:url value="/templates/web/images/product-06.jpg" />" alt="IMG-PRODUCT">
+                            <img src="<c:url value="/templates/web/images/productModel-06.jpg" />" alt="IMG-PRODUCT">
 
                             <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
                                 Quick View
@@ -435,7 +435,7 @@
 
                         <div class="block2-txt flex-w flex-t p-t-14">
                             <div class="block2-txt-child1 flex-col-l ">
-                                <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                <a href="productModel-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
                                     Vintage Inspired Classic
                                 </a>
 
@@ -458,7 +458,7 @@
                     <!-- Block2 -->
                     <div class="block2">
                         <div class="block2-pic hov-img0">
-                            <img src="<c:url value="/templates/web/images/product-07.jpg" />" alt="IMG-PRODUCT">
+                            <img src="<c:url value="/templates/web/images/productModel-07.jpg" />" alt="IMG-PRODUCT">
 
                             <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
                                 Quick View
@@ -467,7 +467,7 @@
 
                         <div class="block2-txt flex-w flex-t p-t-14">
                             <div class="block2-txt-child1 flex-col-l ">
-                                <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                <a href="productModel-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
                                     Shirt in Stretch Cotton
                                 </a>
 
@@ -490,7 +490,7 @@
                     <!-- Block2 -->
                     <div class="block2">
                         <div class="block2-pic hov-img0">
-                            <img src="<c:url value="/templates/web/images/product-08.jpg" />" alt="IMG-PRODUCT">
+                            <img src="<c:url value="/templates/web/images/productModel-08.jpg" />" alt="IMG-PRODUCT">
 
                             <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
                                 Quick View
@@ -499,7 +499,7 @@
 
                         <div class="block2-txt flex-w flex-t p-t-14">
                             <div class="block2-txt-child1 flex-col-l ">
-                                <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                <a href="productModel-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
                                     Pieces Metallic Printed
                                 </a>
 
@@ -522,7 +522,7 @@
                     <!-- Block2 -->
                     <div class="block2">
                         <div class="block2-pic hov-img0">
-                            <img src="<c:url value="/templates/web/images/product-09.jpg" />" alt="IMG-PRODUCT">
+                            <img src="<c:url value="/templates/web/images/productModel-09.jpg" />" alt="IMG-PRODUCT">
 
                             <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
                                 Quick View
@@ -531,7 +531,7 @@
 
                         <div class="block2-txt flex-w flex-t p-t-14">
                             <div class="block2-txt-child1 flex-col-l ">
-                                <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                <a href="productModel-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
                                     Converse All Star Hi Plimsolls
                                 </a>
 
@@ -554,7 +554,7 @@
                     <!-- Block2 -->
                     <div class="block2">
                         <div class="block2-pic hov-img0">
-                            <img src="<c:url value="/templates/web/images/product-10.jpg" />" alt="IMG-PRODUCT">
+                            <img src="<c:url value="/templates/web/images/productModel-10.jpg" />" alt="IMG-PRODUCT">
 
                             <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
                                 Quick View
@@ -563,7 +563,7 @@
 
                         <div class="block2-txt flex-w flex-t p-t-14">
                             <div class="block2-txt-child1 flex-col-l ">
-                                <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                <a href="productModel-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
                                     Femme T-Shirt In Stripe
                                 </a>
 
@@ -586,7 +586,7 @@
                     <!-- Block2 -->
                     <div class="block2">
                         <div class="block2-pic hov-img0">
-                            <img src="<c:url value="/templates/web/images/product-11.jpg" />" alt="IMG-PRODUCT">
+                            <img src="<c:url value="/templates/web/images/productModel-11.jpg" />" alt="IMG-PRODUCT">
 
                             <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
                                 Quick View
@@ -595,7 +595,7 @@
 
                         <div class="block2-txt flex-w flex-t p-t-14">
                             <div class="block2-txt-child1 flex-col-l ">
-                                <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                <a href="productModel-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
                                     Herschel supply
                                 </a>
 
@@ -618,7 +618,7 @@
                     <!-- Block2 -->
                     <div class="block2">
                         <div class="block2-pic hov-img0">
-                            <img src="<c:url value="/templates/web/images/product-12.jpg" />" alt="IMG-PRODUCT">
+                            <img src="<c:url value="/templates/web/images/productModel-12.jpg" />" alt="IMG-PRODUCT">
 
                             <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
                                 Quick View
@@ -627,7 +627,7 @@
 
                         <div class="block2-txt flex-w flex-t p-t-14">
                             <div class="block2-txt-child1 flex-col-l ">
-                                <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                <a href="productModel-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
                                     Herschel supply
                                 </a>
 
@@ -650,7 +650,7 @@
                     <!-- Block2 -->
                     <div class="block2">
                         <div class="block2-pic hov-img0">
-                            <img src="<c:url value="/templates/web/images/product-13.jpg" />" alt="IMG-PRODUCT">
+                            <img src="<c:url value="/templates/web/images/productModel-13.jpg" />" alt="IMG-PRODUCT">
 
                             <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
                                 Quick View
@@ -659,7 +659,7 @@
 
                         <div class="block2-txt flex-w flex-t p-t-14">
                             <div class="block2-txt-child1 flex-col-l ">
-                                <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                <a href="productModel-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
                                     T-Shirt with Sleeve
                                 </a>
 
@@ -682,7 +682,7 @@
                     <!-- Block2 -->
                     <div class="block2">
                         <div class="block2-pic hov-img0">
-                            <img src="<c:url value="/templates/web/images/product-14.jpg" />" alt="IMG-PRODUCT">
+                            <img src="<c:url value="/templates/web/images/productModel-14.jpg" />" alt="IMG-PRODUCT">
 
                             <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
                                 Quick View
@@ -691,7 +691,7 @@
 
                         <div class="block2-txt flex-w flex-t p-t-14">
                             <div class="block2-txt-child1 flex-col-l ">
-                                <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                <a href="productModel-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
                                     Pretty Little Thing
                                 </a>
 
@@ -714,7 +714,7 @@
                     <!-- Block2 -->
                     <div class="block2">
                         <div class="block2-pic hov-img0">
-                            <img src="<c:url value="/templates/web/images/product-15.jpg" />" alt="IMG-PRODUCT">
+                            <img src="<c:url value="/templates/web/images/productModel-15.jpg" />" alt="IMG-PRODUCT">
 
                             <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
                                 Quick View
@@ -723,7 +723,7 @@
 
                         <div class="block2-txt flex-w flex-t p-t-14">
                             <div class="block2-txt-child1 flex-col-l ">
-                                <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                <a href="productModel-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
                                     Mini Silver Mesh Watch
                                 </a>
 
@@ -746,7 +746,7 @@
                     <!-- Block2 -->
                     <div class="block2">
                         <div class="block2-pic hov-img0">
-                            <img src="<c:url value="/templates/web/images/product-16.jpg" />" alt="IMG-PRODUCT">
+                            <img src="<c:url value="/templates/web/images/productModel-16.jpg" />" alt="IMG-PRODUCT">
 
                             <a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
                                 Quick View
@@ -755,7 +755,7 @@
 
                         <div class="block2-txt flex-w flex-t p-t-14">
                             <div class="block2-txt-child1 flex-col-l ">
-                                <a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                                <a href="productModel-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
                                     Square Neck Back
                                 </a>
 

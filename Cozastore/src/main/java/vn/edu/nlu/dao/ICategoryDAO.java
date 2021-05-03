@@ -1,19 +1,19 @@
 package vn.edu.nlu.dao;
 
-import vn.edu.nlu.model.Category;
+import vn.edu.nlu.model.CategoryModel;
 
 import java.util.List;
 
-public interface ICategoryDAO extends GenericDAO<Category> {
-    List<Category> findAll();
+public interface ICategoryDAO extends GenericDAO<CategoryModel> {
+    List<CategoryModel> findAll();
 
-    Category findOne(Integer id);
+    CategoryModel findOne(Integer id);
 
-    Category findOne(String code);
+    CategoryModel findOne(String code);
 
-    Integer save(Category category);
+    Integer save(CategoryModel categoryModel);
 
-    void update(Category updateCategory);
+    void update(CategoryModel updateCategoryModel);
 
     void delete(int id);
 

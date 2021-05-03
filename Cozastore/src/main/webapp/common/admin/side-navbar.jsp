@@ -19,7 +19,7 @@
                 <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
                      data-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="<c:url value="/quan-tri/san-pham/danh-sach" />">Danh sách sản phẩm</a>
+                        <a class="nav-link" href="<c:url value="/quan-tri/san-pham/danh-sach?page=1&limit=2" />">Danh sách sản phẩm</a>
                         <a class="nav-link" href="layout-sidenav-light.html">Thêm sản phẩm mới</a>
                     </nav>
                 </div>
@@ -73,7 +73,7 @@
         </div>
         <div class="sb-sidenav-footer">
             <div class="small">Đăng nhập bởi:</div>
-            <%= SecurityUtils.getPrincipal().getFullname() %>
+            <span class="text-capitalize"><%= SecurityUtils.getPrincipal().getFullname() %></span>
         </div>
     </nav>
 </div>

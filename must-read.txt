@@ -1,4 +1,7 @@
-NHẮC LẠI SECURITY
+
+========================================================================================================================
+===== SPRING SECURITY ==================================================================================================
+========================================================================================================================
 1. khi khởi tạo file security.xml phải gọi nó trong web.xml
     => là cục spring security filter
 2. file security phải được load file context-param
@@ -11,15 +14,115 @@ NHẮC LẠI SECURITY
 ***** NOTE:    Class User là thằng security tạo sẵn
 Đối tượng lưu giữ thông tin user gọi là principal.
 
-@MANYTOMANY
+========================================================================================================================
+===== @MANYTOMANY ======================================================================================================
+========================================================================================================================
 Ở chỗ này có 2 cái fetch type: eager và lazy
     - LAZY (default): khi lấy userentiy rồi thằng role chưa load lên được. gọi ra mới load.
     để xài được lazy thì phải khai báo ở JPAConfig
     - EAGER: dở cái là nó tự động load ngay role cùng với user. có nhiều cái nó lồng nhau quá nhiều dữ liệu thì sẽ giảm hiệu suất => ưu tiên lazy.
 
+========================================================================================================================
+===== INTERCEPTOR ======================================================================================================
+========================================================================================================================
+default có 3 hàm: preHandle, postHandle, afterCompletion
+đã hiểu filter là gì chưa?
+interceptor là gì? như filter thôi.
+nhưng mà nó được phát triển từ spring framework => có nhiều ưu điểm hơn, nhiều option hơn
+filter chỉ có 1 doFilter
+trong interceptor có preHandle, postHandle, afterCompletion
+preHandle ~ doFilter
+còn 3 kia hoạt động sao?
+preHandle: trước khi chạy servlet, xử lý trước
+    - ưu: nếu không dùng cái này mà dùng filter thì giảm perform
+    - pre xong, mới render
+postHandle: pre xong, post xong, mới render
+afterCompletion: sau khi xử lý preHanle xong, render view xong, hoàn thành xong hết ròi, mới xử lý afterComplete này
+    - render xong mới after
+
+khác biệt giữa filter và interceptor thì là do nó được hỗ trợ bởi spring nên nhiều option hơn thôi
+chứ pre với doFilter nó tương đương nhau
+
+========================================================================================================================
+===== RESTFUL WEB SERVICE ======================================================================================================
+========================================================================================================================
+định dạng chung XML và JSON
+DTO: data transfer object
+    - dùng để nhận dữ liệu từ client gửi về rồi đẩy xuống controller
+    - controller đẩy xuống service
+    - service đẩy xuống database
+
+    web: client -> dto -> controller -> service -> repository
+    api: client -> dto -> api -> service -> repository
+
+khi đẩy data về, json, key sẽ trùng field name trong dto để mà khi client nó đẩy data xuống cho dto nó hứng,
+nó sẽ tìm xem trong dto có những field trùng với key của json không thì nó mới map value vào
+
+========================================================================================================================
+== MAIN RULE =======================================================================================================
+========================================================================================================================
+URL phải là danh từ
+HTTP method: url giống nhau không sao cả, quan trọng là HTTP method
+    - post: /san-pham
+    - put: /san-pham
+    - delete: /san-pham
+    - get: /san-pham
+
+server side render: server render ngay cho chúng ta luôn
+client side render: render phía client. data đẩy ra xong mới render ra.
+
+=====================================
+=== AJAX ============================
+=====================================
+để server nhận vào biết được đây là chuỗi json thì phải định nghĩa contentType cho nó
+url
+type: HTTP method
+contentType: kiểu dữ liệu post từ client về server (ngoài json ra còn có string,..)
+dataType: sau khi api xử lý xong hết logic, data trả về cho client
+
+====================================
+trong HTML người ta muốn gọi 1 api thì làm như nào? viết từ spring boot chẳng hạn
+người dùng api chẳng quan tâm m viết api như nào đâu. thằng frontend nó muốn gọi api, nó chỉ cần biết:
+ - input của m cần gì thì t cung cấp
+ - t muốn output như nào m phải làm ra như vậy
+
+vậy đi phỏng vấn, người ta hỏi anh muốn gọi api thì ta dùng cơ chế gì? AJAX
+
+CƠ CHẾ HOẠT ĐỘNG CỦA AJAX
+    - phải có chỗ nhập url muốn request vào: url
+    - phải định nghĩa HTTP method: type
+    - khi đẩy dữ liệu lên phải định nghĩa dữ liệu
+        - ví dụ: khi từ client đẩy về server thì phải định nghĩa data đó thuộc kiểu dữ liệu nào
+        (có thể là json hay string,...)
+        - trong api có một cái @RequestBody, cái này định nghĩa kiểu dữ liệu gửi về
+        - chúng ta phải định nghĩa kiểu dữ liệu để server biết nó sẽ nhận vô cái gì.
+        hong thôi là nó hong biết nó sẽ báo lỗi á. lỗi 405. => contentType
+        - đẩy dữ liệu về, data từ jquery chỉ là 1 obj js, để khi server nhận vào mà biết nó là chuỗi json thì phải:
+        data: JSON.stringify(data)
+
+    - có  data nhận vào mới định nghĩa contentType
+
+===============================================
+    data -> resultset -> cái mình mong muốn
+    trường hợp này là productModel.
+===============================================
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+========================================================================================================================
+================================================================================================================
+========================================================================================================================
 1. đối với thằng created/modifie by:
 	getCurrentAuditor() return ra cái tên đó.
 

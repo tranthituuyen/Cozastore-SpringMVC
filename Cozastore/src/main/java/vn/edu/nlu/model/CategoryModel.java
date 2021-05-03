@@ -2,12 +2,12 @@ package vn.edu.nlu.model;
 
 import java.io.Serializable;
 
-public class Category extends AbstractModel<Category> implements Serializable {
+public class CategoryModel extends AbstractModel<CategoryModel> implements Serializable {
     private String code;
     private String name;
     private int numberOfProduct;
 
-    public Category() {}
+    public CategoryModel() {}
 
     public String getCode() {
         return code;

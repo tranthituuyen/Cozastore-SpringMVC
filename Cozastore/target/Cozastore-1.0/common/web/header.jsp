@@ -14,13 +14,14 @@
 
                 <div class="right-top-bar flex-w h-full">
                     <security:authorize access="isAnonymous()">
-                        <a href="#" class="flex-c-m trans-04 p-lr-25">Đăng nhập</a>
+                        <a href="<c:url value="<%= URLConstant.LOGIN %>"/>" class="flex-c-m trans-04 p-lr-25">Đăng nhập</a>
                         <a href="#" class="flex-c-m trans-04 p-lr-25">Đăng ký</a>
                     </security:authorize>
 
                     <security:authorize access="isAuthenticated()">
                         <a href="#" class="flex-c-m trans-04 p-lr-25">
-                            Xin chào, <%= SecurityUtils.getPrincipal().getFullname() %>
+                            Xin chào,
+                            <span class="text-capitalize"><%= SecurityUtils.getPrincipal().getFullname() %></span>
                         </a>
                         <a href="<c:url value='<%= URLConstant.LOGOUT %>'/>" class="flex-c-m trans-04 p-lr-25">Thoát</a>
                     </security:authorize>
@@ -44,7 +45,7 @@
                         </li>
 
                         <li>
-                            <a href="product.html">Cửa hàng</a>
+                            <a href="productModel.html">Cửa hàng</a>
                         </li>
 
                         <li class="label1" data-label1="hot">
@@ -89,8 +90,9 @@
     <div class="wrap-header-mobile">
         <!-- Logo moblie -->
         <div class="logo-mobile">
-            <a href="<c:url value="/trang-chu" />"><img src="<c:url value="/templates/web/images/icons/logo-01.png"/>"
-                                                        alt="IMG-LOGO"></a>
+            <a href="<c:url value="/trang-chu" />">
+                <img src="<c:url value="/templates/web/images/icons/logo-01.png"/>" alt="IMG-LOGO">
+            </a>
         </div>
 
         <!-- Icon header -->
@@ -163,7 +165,7 @@
             </li>
 
             <li>
-                <a href="product.html">Shop</a>
+                <a href="productModel.html">Shop</a>
             </li>
 
             <li>

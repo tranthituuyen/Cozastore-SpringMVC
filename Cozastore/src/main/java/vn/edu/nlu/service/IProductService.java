@@ -1,9 +1,11 @@
 package vn.edu.nlu.service;
 
-import vn.edu.nlu.model.Product;
+import org.springframework.data.domain.Pageable;
+import vn.edu.nlu.dto.ProductDTO;
 
 import java.util.List;
 
 public interface IProductService {
-    List<Product> findAll();
+    List<ProductDTO> findAll(Pageable pageable);
+    int getTotalItem();
 }

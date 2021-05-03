@@ -1,35 +1,35 @@
 package vn.edu.nlu.mapper;
 
-import vn.edu.nlu.model.Product;
+import vn.edu.nlu.model.ProductModel;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class ProductMapper implements RowMapper<Product> {
+public class ProductMapper implements RowMapper<ProductModel> {
     @Override
-    public Product mapRow(ResultSet resultSet) {
-        Product product = new Product();
+    public ProductModel mapRow(ResultSet resultSet) {
+        ProductModel productModel = new ProductModel();
         try {
-            product.setId(resultSet.getInt("id"));
-            product.setCode(resultSet.getString("code"));
-            product.setName(resultSet.getString("name"));
-            product.setCategoryCode(resultSet.getString("categorycode"));
-            product.setPrice(resultSet.getInt("price"));
-            product.setCover(resultSet.getString("cover"));
-            product.setSex(resultSet.getString("sex"));
-            product.setDescription(resultSet.getString("description"));
-            product.setDetails(resultSet.getString("details"));
-            product.setStatus(resultSet.getBoolean("status"));
-            product.setCreatedDate(resultSet.getTimestamp("createddate"));
-            product.setCreatedBy(resultSet.getString("createdby"));
+            productModel.setId(resultSet.getInt("id"));
+            productModel.setCode(resultSet.getString("code"));
+            productModel.setName(resultSet.getString("name"));
+            productModel.setCategoryCode(resultSet.getString("categorycode"));
+            productModel.setPrice(resultSet.getInt("price"));
+            productModel.setCover(resultSet.getString("cover"));
+            productModel.setSex(resultSet.getString("sex"));
+            productModel.setDescription(resultSet.getString("description"));
+            productModel.setDetails(resultSet.getString("details"));
+            productModel.setStatus(resultSet.getBoolean("status"));
+            productModel.setCreatedDate(resultSet.getTimestamp("createddate"));
+            productModel.setCreatedBy(resultSet.getString("createdby"));
 
             if (resultSet.getTimestamp("modifieddate") != null) {
-                product.setModifiedDate(resultSet.getTimestamp("modifieddate"));
+                productModel.setModifiedDate(resultSet.getTimestamp("modifieddate"));
             }
             if (resultSet.getString("modifiedby") != null) {
-                product.setModifiedBy(resultSet.getString("modifiedby"));
+                productModel.setModifiedBy(resultSet.getString("modifiedby"));
             }
-            return product;
+            return productModel;
         } catch (SQLException e) {
             return null;
         }
